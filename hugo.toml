@@ -36,7 +36,7 @@ defaultContentLanguageInSubdir = false
     # 导航菜单（合并重复的菜单配置，保持唯一性）
     [[languages.zh.menu.main]]
       identifier = 'search'
-      name = '🔍搜索
+      name = '🔍搜索'
       url = 'search'
       weight = 1
 

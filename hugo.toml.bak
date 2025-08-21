@@ -36,25 +36,25 @@ defaultContentLanguageInSubdir = false
     # 导航菜单（合并重复的菜单配置，保持唯一性）
     [[languages.zh.menu.main]]
       identifier = 'search'
-      name = '🔍Search'
+      name = '🔍搜索
       url = 'search'
       weight = 1
 
     [[languages.zh.menu.main]]
       identifier = 'home'
-      name = '🏠Home'
+      name = '🏠首页'
       url = '/'
       weight = 2
 
     [[languages.zh.menu.main]]
-      identifier = 'tech'
-      name = '👨🏻‍💻 Tech'
-      url = '/posts/tech'
+      identifier = 'posts'
+      name = '👨🏻‍💻 文章'
+      url = '/posts/
       weight = 3
 
     [[languages.zh.menu.main]]
       identifier = 'read'
-      name = '📕 Read'
+      name = '📕 阅读'
       url = '/posts/read'
       weight = 4
 
@@ -66,13 +66,13 @@ defaultContentLanguageInSubdir = false
 
     [[languages.zh.menu.main]]
       identifier = 'photos'
-      name = '🖼️ Photos'
+      name = '🖼️ 相册'
       url = '/posts/photos'
       weight = 6
 
     [[languages.zh.menu.main]]
       identifier = 'archives'
-      name = '⏱Timeline'
+      name = '⏱时间线'
       url = '/archives'
       weight = 20
 
@@ -84,7 +84,7 @@ defaultContentLanguageInSubdir = false
 
     [[languages.zh.menu.main]]
       identifier = 'about'
-      name = '🙋🏻‍♂️About'
+      name = '🙋🏻‍关于我'
       url = '/about'
       weight = 50
 
