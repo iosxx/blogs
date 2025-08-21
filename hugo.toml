@@ -1,453 +1,280 @@
-=================================
- 
-基础配置
- 
-===============================
- 
+# 基础配置
 baseURL = 'https://iosxx.github.io/'  # 绑定的域名
-title = '果粉圈博客
+title = '果粉圈博客'  # 补充缺失的闭合引号
 paginate = 10                         # 首页每页显示的文章数
 theme = 'PaperMod'                    # 主题名称，需与themes文件夹下名称一致
 languageCode = 'zh-cn'                # 语言代码，如 en-us
- 
-hasCJKLanguage = true                 # 自动检测是否包含中、日、韩文，若文章使用大量中文引号可开启
+hasCJKLanguage = true                 # 自动检测是否包含中、日、韩文
 enableInlineShortcodes = true
-enableEmoji = true                    # 允许使用 Emoji 表情，建议设为 true
+enableEmoji = true                    # 允许使用 Emoji 表情
 enableRobotsTXT = true
 buildDrafts = false                   # 是否构建草稿文章
 buildFuture = false                   # 是否构建未来发布的文章
 buildExpired = false                  # 是否构建已过期的文章
 pygmentsUseClasses = true
- 
 googleAnalytics = 'UA-123-45'        # Google Analytics 代码（按需启用）
- 
-========================================
- 
-压缩配置
- 
-========================================
- 
+
+# 压缩配置
 [minify]
 disableXML = true
- 
 minifyOutput = true                  # 是否压缩输出内容（按需启用）
- 
-========================================
- 
-永久链接配置
- 
-========================================
- 
+
+# 永久链接配置（保留一种格式，避免冲突）
 [permalinks]
-post = '/:title/'
- 
-post = '/:year/:month/:day/:title/'  # 另一种日期+标题的链接格式（按需启用）
- 
-========================================
- 
-多语言配置
- 
-========================================
- 
+post = '/:year/:month/:day/:title/'  # 日期+标题的链接格式
+
+# 多语言配置
 defaultContentLanguage = 'zh'         # 优先展示的语言页面
 defaultContentLanguageInSubdir = false
- 
+
 [languages]
-[languages.zh]
-languageName = 'Chinese'
-# contentDir = 'content/english'   # 语言对应内容目录（按需启用）
-weight = 1
- 
-# 导航菜单
-[[languages.zh.menu.main]]
-identifier = 'search'
-name = '🔍Search'
-url = 'search'
-weight = 1
- 
-[[languages.zh.menu.main]]
-identifier = 'home'
-name = '🏠Home'
-url = '/'
-weight = 2
- 
-# [[languages.zh.menu.main]]
-#   identifier = 'posts'
-#   name = '📚Posts'
-#   url = '/posts'
-#   weight = 3
- 
-[[languages.zh.menu.main]]
-identifier = 'tech'
-name = '👨🏻‍💻 Tech'
-url = '/posts/tech'
-weight = 3
- 
-[[languages.zh.menu.main]]
-identifier = 'read'
-name = '📕 Read'
-url = '/posts/read'
-weight = 4
- 
-[[languages.zh.menu.main]]
-identifier = 'life'
-name = '🏖 Life'
-url = '/posts/life'
-weight = 5
- 
-[[languages.zh.menu.main]]
-identifier = 'photos'
-name = '🖼️ Photos'
-url = '/posts/photos'
-weight = 6
- 
-[[languages.zh.menu.main]]
-identifier = 'archives'
-name = '⏱Timeline'
-url = '/archives'
-weight = 20
- 
-# [[languages.zh.menu.main]]
-#   identifier = 'categories'
-#   name = '🧩分类'
-#   url = 'categories'
-#   weight = 30
- 
-[[languages.zh.menu.main]]
-identifier = 'tags'
-name = '🔖Tag'
-url = '/tags'
-weight = 40
- 
-[[languages.zh.menu.main]]
-identifier = 'about'
-name = '🙋🏻‍♂️About'
-url = '/about'
-weight = 50
- 
-# [[languages.zh.menu.main]]
-#   identifier = 'links'
-#   name = '🤝友链'
-#   url = 'links'
-#   weight = 60
- 
-========================================
- 
-输出格式配置
- 
-========================================
- 
+  [languages.zh]
+    languageName = 'Chinese'
+    # contentDir = 'content/english'   # 语言对应内容目录（按需启用）
+    weight = 1
+
+    # 导航菜单（合并重复的菜单配置，保持唯一性）
+    [[languages.zh.menu.main]]
+      identifier = 'search'
+      name = '🔍Search'
+      url = 'search'
+      weight = 1
+
+    [[languages.zh.menu.main]]
+      identifier = 'home'
+      name = '🏠Home'
+      url = '/'
+      weight = 2
+
+    [[languages.zh.menu.main]]
+      identifier = 'tech'
+      name = '👨🏻‍💻 Tech'
+      url = '/posts/tech'
+      weight = 3
+
+    [[languages.zh.menu.main]]
+      identifier = 'read'
+      name = '📕 Read'
+      url = '/posts/read'
+      weight = 4
+
+    [[languages.zh.menu.main]]
+      identifier = 'life'
+      name = '🏖 Life'
+      url = '/posts/life'
+      weight = 5
+
+    [[languages.zh.menu.main]]
+      identifier = 'photos'
+      name = '🖼️ Photos'
+      url = '/posts/photos'
+      weight = 6
+
+    [[languages.zh.menu.main]]
+      identifier = 'archives'
+      name = '⏱Timeline'
+      url = '/archives'
+      weight = 20
+
+    [[languages.zh.menu.main]]
+      identifier = 'tags'
+      name = '🔖Tag'
+      url = '/tags'
+      weight = 40
+
+    [[languages.zh.menu.main]]
+      identifier = 'about'
+      name = '🙋🏻‍♂️About'
+      url = '/about'
+      weight = 50
+
+# 输出格式配置
 [outputs]
 home = ["HTML", "RSS", "JSON"]  # 首页输出格式，JSON 用于搜索功能
- 
-========================================
- 
-PaperMod 主题参数配置
- 
-========================================
- 
+
+# PaperMod 主题参数配置
 [params]
-env = 'production'                # 环境：production 会启用谷歌分析、Open Graph 等
-description = '这是一个纯粹的博客......'
-author = 'Fubos'
- 
-author = ["果粉圈", "G0FCN"]              # 多作者配置（按需启用）
- 
-首页信息配置（profileMode 关闭时显示）
- 
-[params.homeInfoParams]
-enabled = true
-title = 'Feeling, Observing, Recording, Expressing...'
- 
-subtitle = "👏🏼welcome to my blog👇联系方式"  # 首页副标题（按需启用）
- 
-imageUrl = 'img/logo.png'
-imageTitle = ''
-imageWidth = 180
-imageHeight = 180
- 
-[[params.homeInfoParams.buttons]]
-name = '👨🏻‍💻 tech'
-url = 'posts/tech'
- 
-[[params.homeInfoParams.buttons]]
-name = '📕 read'
-url = 'posts/read'
- 
-[[params.homeInfoParams.buttons]]
-name = '🏖 life'
-url = 'posts/life'
- 
-主题基础设置
- 
-defaultTheme = 'auto'             # 主题模式：auto/light/dark
-disableThemeToggle = false        # 是否禁用主题切换按钮
-DateFormat = '2006-01-02'         # 日期格式
-ShowShareButtons = true           # 显示分享按钮
-ShowReadingTime = true            # 显示阅读时间
- 
-disableSpecialistPost = true       # 禁用特定文章类型（按需启用）
- 
-displayFullLangName = true        # 显示完整语言名称
-ShowPostNavLinks = true           # 显示上一篇/下一篇
-ShowBreadCrumbs = true            # 显示面包屑导航
-ShowCodeCopyButtons = true        # 显示代码复制按钮
-hideFooter = false                # 是否隐藏页脚
-ShowWordCount = true              # 显示文章字数
-VisitCount = true                 # 显示访问量
-ShowLastMod = true                # 显示文章更新时间
-ShowToc = true                    # 显示文章目录
-TocOpen = true                    # 默认展开目录
-disableScrollToTop = false        # 是否禁用回到顶部按钮
-usefancyapp = true
-summary = true                    # 显示文章摘要
-comments = true                   # 启用评论功能
- 
-不蒜子统计配置
- 
-[params.busuanzi]
-enable = true                     # 启用不蒜子访问统计
- 
-社交媒体图标
- 
-[[params.socialIcons]]
-name = 'github'
-url = 'https://github.com/fubos'
- 
-[[params.socialIcons]]
- 
-name = 'twitter'
- 
-url = 'img/twitter.png'
- 
-[[params.socialIcons]]
- 
-name = 'bilibili'
- 
-url = 'https://space.bilibili.com/378117882'
- 
-[[params.socialIcons]]
-name = 'WeChat'
-url = 'img/wechat-code.jpg'
- 
-[[params.socialIcons]]
-name = 'email'
-url = 'mailto:2547388310@qq.com'
- 
-[[params.socialIcons]]
- 
-name = 'RSS'
- 
-url = 'index.xml'
- 
-[[params.socialIcons]]
- 
-name = 'facebook'
- 
-url = 'https://www.facebook.com/profile.php?id=100027782410997'
- 
-[[params.socialIcons]]
- 
-name = 'instagram'
- 
-url = 'img/instagram.png'
- 
-[[params.socialIcons]]
- 
-name = 'QQ'
- 
-url = 'img/qq.png'
- 
-[[params.socialIcons]]
- 
-name = 'Phone'
- 
-url = 'img/phone.png'
- 
-文章编辑链接（按需启用）
- 
-[params.editPost]
- 
-URL = 'https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content'
- 
-Text = 'Suggest Changes'  # 编辑按钮文字
- 
-appendFilePath = true     # 编辑链接后追加文件路径
- 
-首页标签（按需启用）
- 
-[params.label]
- 
-text = 'Home'
- 
-icon = 'icon.png'
- 
-iconHeight = 35
- 
-分析工具配置（按需启用）
- 
-[params.analytics]
- 
-[params.analytics.google]
- 
-SiteVerificationTag = 'XYZabc'  # 谷歌站点验证标签
- 
-资源配置
- 
-[params.assets]
-favicon = '/assets/favicon.ico'
- 
-favicon = 'img/logo.gif'
- 
-favicon16x16 = 'img/logo.gif'
- 
-favicon32x32 = 'img/logo.gif'
- 
-apple_touch_icon = 'logo.gif'
- 
-safari_pinned_tab = 'logo.gif'
- 
-封面图片配置（按需启用）
- 
-[params.cover]
- 
-hidden = true              # 仅不在结构化数据中隐藏，其他地方隐藏
- 
-hiddenInList = true        # 在列表页和首页隐藏
- 
-hiddenInSingle = true      # 在文章页隐藏
- 
-搜索功能配置（Fuse.js）
- 
-[params.fuseOpts]
-isCaseSensitive = false
-shouldSort = true
-location = 0
-distance = 1000
-threshold = 1
-minMatchCharLength = 0
-keys = ['title', 'permalink', 'summary']
- 
-Twikoo 评论配置
- 
-[params.twikoo]
-version = '1.4.11'
- 
-========================================
- 
-分类法配置
- 
-========================================
- 
+  env = 'production'                # 环境：production 会启用谷歌分析、Open Graph 等
+  description = '这是一个纯粹的博客......'
+  author = ["果粉圈", "G0FCN"]      # 多作者配置（合并单作者配置，避免冲突）
+  defaultTheme = 'auto'             # 主题模式：auto/light/dark
+  disableThemeToggle = false        # 是否禁用主题切换按钮
+  DateFormat = '2006-01-02'         # 日期格式
+  ShowShareButtons = true           # 显示分享按钮
+  ShowReadingTime = true            # 显示阅读时间
+  disableSpecialistPost = true      # 禁用特定文章类型（按需启用）
+  displayFullLangName = true        # 显示完整语言名称
+  ShowPostNavLinks = true           # 显示上一篇/下一篇
+  ShowBreadCrumbs = true            # 显示面包屑导航
+  ShowCodeCopyButtons = true        # 显示代码复制按钮
+  hideFooter = false                # 是否隐藏页脚
+  ShowWordCount = true              # 显示文章字数
+  VisitCount = true                 # 显示访问量
+  ShowLastMod = true                # 显示文章更新时间
+  ShowToc = true                    # 显示文章目录
+  TocOpen = true                    # 默认展开目录
+  disableScrollToTop = false        # 是否禁用回到顶部按钮
+  usefancyapp = true
+  summary = true                    # 显示文章摘要
+  comments = true                   # 启用评论功能
+  UseHugoToc = true                 # 启用 Hugo 自动生成目录
+
+  # 首页信息配置（统一格式，避免冲突）
+  [params.homeInfoParams]
+    enabled = true
+    Title = "你好呀 👋"
+    Content = "欢迎来到我的博客，记录学习笔记与生活感悟～"
+    subtitle = "👏🏼welcome to my blog👇联系方式"  # 首页副标题（按需启用）
+    imageUrl = 'img/logo.png'
+    imageTitle = ''
+    imageWidth = 180
+    imageHeight = 180
+
+    [[params.homeInfoParams.buttons]]
+      name = '👨🏻‍💻 tech'
+      url = 'posts/tech'
+
+    [[params.homeInfoParams.buttons]]
+      name = '📕 read'
+      url = 'posts/read'
+
+    [[params.homeInfoParams.buttons]]
+      name = '🏖 life'
+      url = 'posts/life'
+
+  # 不蒜子统计配置
+  [params.busuanzi]
+    enable = true                     # 启用不蒜子访问统计
+
+  # 社交媒体图标
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/fubos'
+
+  [[params.socialIcons]]
+    name = 'twitter'
+    url = 'img/twitter.png'
+
+  [[params.socialIcons]]
+    name = 'bilibili'
+    url = 'https://space.bilibili.com/378117882'
+
+  [[params.socialIcons]]
+    name = 'WeChat'
+    url = 'img/wechat-code.jpg'
+
+  [[params.socialIcons]]
+    name = 'email'
+    url = 'mailto:2547388310@qq.com'
+
+  [[params.socialIcons]]
+    name = 'RSS'
+    url = 'index.xml'
+
+  [[params.socialIcons]]
+    name = 'facebook'
+    url = 'https://www.facebook.com/profile.php?id=100027782410997'
+
+  [[params.socialIcons]]
+    name = 'instagram'
+    url = 'img/instagram.png'
+
+  [[params.socialIcons]]
+    name = 'QQ'
+    url = 'img/qq.png'
+
+  [[params.socialIcons]]
+    name = 'Phone'
+    url = 'img/phone.png'
+
+  # 文章编辑链接（按需启用）
+  [params.editPost]
+    URL = 'https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content'
+    Text = 'Suggest Changes'  # 编辑按钮文字
+    appendFilePath = true     # 编辑链接后追加文件路径
+
+  # 首页标签（按需启用）
+  [params.label]
+    text = 'Home'
+    icon = 'icon.png'
+    iconHeight = 35
+
+  # 分析工具配置（按需启用）
+  [params.analytics]
+    [params.analytics.google]
+      SiteVerificationTag = 'XYZabc'  # 谷歌站点验证标签
+
+  # 资源配置（合并重复的favicon配置）
+  [params.assets]
+    favicon = 'img/logo.gif'
+    favicon16x16 = 'img/logo.gif'
+    favicon32x32 = 'img/logo.gif'
+    apple_touch_icon = 'logo.gif'
+    safari_pinned_tab = 'logo.gif'
+
+  # 封面图片配置（按需启用）
+  [params.cover]
+    hidden = true              # 仅不在结构化数据中隐藏，其他地方隐藏
+    hiddenInList = true        # 在列表页和首页隐藏
+    hiddenInSingle = true      # 在文章页隐藏
+
+  # 搜索功能配置（Fuse.js）
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 1
+    minMatchCharLength = 0
+    keys = ['title', 'permalink', 'summary']
+
+  # Twikoo 评论配置
+  [params.twikoo]
+    version = '1.4.11'
+
+# 分类法配置
 [taxonomies]
-category = 'categories'  # 分类对应URL路径
-tag = 'tags'             # 标签对应URL路径
-series = 'series'        # 系列文章对应URL路径
- 
-========================================
- 
-Markdown 渲染配置
- 
-========================================
- 
+  category = 'categories'  # 分类对应URL路径
+  tag = 'tags'             # 标签对应URL路径
+  series = 'series'        # 系列文章对应URL路径
+
+# Markdown 渲染配置
 [markup]
-[markup.goldmark.renderer]
-unsafe = true  # 允许 Markdown 中使用 HTML 代码（Hugo 默认转义，需开启则设为 true）
- 
-[markup.highlight]
-# anchorLineNos = true
-codeFences = true        # 启用代码围栏（建议开启，优化代码显示）
-guessSyntax = true       # 自动识别代码语言（建议开启）
-lineNos = true           # 显示代码行号（建议开启）
-# noClasses = false
-# style = 'monokai'
-style = 'darcula'        # 代码高亮主题
- 
-# 配置说明：
-# codeFences：代码围栏功能，开启后代码块更美观，带语法颜色
-# guessSyntax：未指定语言时自动匹配代码类型
-# hl_Lines：指定高亮行号（建议在单个代码块中设置，不全局配置）
-# lineNoStart：行号起始数字（默认从1开始，无需额外配置）
-# lineNos：显示行号，提升代码可读性
-# lineNumbersInTable：用表格格式化行号与代码（建议设为 true，默认开启）
-# noClasses：使用 class 标签而非内嵌样式（建议设为 false，便于自定义样式）
- 
-========================================
- 
-隐私配置（GDPR 合规）
- 
-========================================
- 
+  [markup.goldmark.renderer]
+    unsafe = true  # 允许 Markdown 中使用 HTML 代码
+
+  [markup.highlight]
+    # anchorLineNos = true
+    codeFences = true        # 启用代码围栏（建议开启，优化代码显示）
+    guessSyntax = true       # 自动识别代码语言（建议开启）
+    lineNos = true           # 显示代码行号（建议开启）
+    # noClasses = false
+    # style = 'monokai'
+    style = 'darcula'        # 代码高亮主题
+
+# 隐私配置（GDPR 合规）
 [privacy]
-[privacy.vimeo]
-disabled = false
-simple = true
- 
-[privacy.twitter]
-disabled = false
-enableDNT = true  # 尊重 Do Not Track 协议
-simple = true
- 
-[privacy.instagram]
-disabled = false
-simple = true
- 
-[privacy.youtube]
-disabled = false
-privacyEnhanced = true  # 启用 YouTube 增强隐私模式
- 
-========================================
- 
-第三方服务配置
- 
-========================================
- 
+  [privacy.vimeo]
+    disabled = false
+    simple = true
+
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true  # 尊重 Do Not Track 协议
+    simple = true
+
+  [privacy.instagram]
+    disabled = false
+    simple = true
+
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true  # 启用 YouTube 增强隐私模式
+
+# 第三方服务配置
 [services]
-[services.instagram]
-disableInlineCSS = true  # 禁用 Instagram 内嵌 CSS
- 
-[services.twitter]
-disableInlineCSS = true  # 禁用 Twitter 内嵌 CSSShowWordCount = true
-ShowShareButtons = true
-ShowPostNavLinks = true
-ShowBreadCrumbs = true
-UseHugoToc = true
+  [services.instagram]
+    disableInlineCSS = true  # 禁用 Instagram 内嵌 CSS
 
-# 修复：首页信息配置（改用 TOML 标准块格式，避免 {} 嵌套）
-[params.homeInfoParams]
-Title = "你好呀 👋"
-Content = "欢迎来到我的博客，记录学习笔记与生活感悟～"
-
-# ==============================================
-# 5. 主导航菜单（标准数组格式，无语法错误）
-# ====================================
-[[menu.main]]
-identifier = "categories"
-name = "分类"
-url = "/categories/"
-weight = 10
-
-[[menu.main]]
-identifier = "tags"
-name = "标签"
-url = "/tags/"
-weight = 20
-
-[[menu.main]]
-identifier = "about"
-name = "关于我"
-url = "/about/"
-weight = 30
-
-[[menu.main]]
-identifier = "github"
-name = "GitHub"
-url = "https://github.com/"
-weight = 40
-
-# ==============================================
-# 6. 代码高亮配置
-# ==============================================
-pygmentsUseClasses = true
-[markup.highlight]
-noClasses = false
+  [services.twitter]
+    disableInlineCSS = true  # 禁用 Twitter 内嵌 CSS
