@@ -1,7 +1,7 @@
 # ==============================================
 # 1. 基础核心配置（Hugo 启动必备，适配 v0.148.2+）
 # ==============================================
-baseURL = "http://localhost:1313/"
+baseURL = "https://blog.g0f.cn"
 title = "我的博客"
 theme = "PaperMod"
 languageCode = "zh-CN"
