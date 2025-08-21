@@ -26,8 +26,8 @@
         {{ range $photos }}
           <figure>
             <!-- 给每个图片包裹<a>标签，使用data - fancybox来触发放大效果 -->
-            <a data - fancybox="gallery" href="{{ printf "https://jsd - proxy.ygxz.in/gh/iosxx/blogs@latest/static/photos/%s/%s" $dirName.Name }}" data - caption="{{.Name }}">
-              <img src="{{ printf "https://jsd - proxy.ygxz.in/gh/iosxx/blogs@latest/static/photos/%s/%s" $dirName.Name }}" alt="{{.Name }}" />
+            <a data - fancybox="gallery" href="{{ printf "https://jsd-proxy.ygxz.in/gh/iosxx/blogs@latest/static/photos/%s/%s" $dirName.Name }}" data - caption="{{.Name }}">
+              <img src="{{ printf "https://jsd-proxy.ygxz.in/gh/iosxx/blogs@latest/static/photos/%s/%s" $dirName.Name }}" alt="{{.Name }}" />
             </a>
             <!-- <figcaption>{{.Name | replaceRE "(.*)[.].*" "$1" }}</figcaption> -->
           </figure>
