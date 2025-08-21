@@ -20,8 +20,8 @@ disableXML = true
 minifyOutput = true                  # 是否压缩输出内容（按需启用）
 
 # 永久链接配置（保留一种格式，避免冲突）
-[permalinks]
-post = '/:year/:month/:day/:title/'  # 日期+标题的链接格式
+# [permalinks]
+# post = '/:year/:month/:day/:title/'  # 日期+标题的链接格式
 
 # 多语言配置
 defaultContentLanguage = 'zh'         # 优先展示的语言页面
