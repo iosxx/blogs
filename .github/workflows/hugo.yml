@@ -43,18 +43,18 @@ jobs:
         run: hugo --minify --enableGitInfo --gc
 
       # 部署步骤：已启用GitHub Pages部署
-      # - name: Deploy to GitHub Pages
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     personal_token: ${{ secrets.personal_token }}
-      #     external_repository: iosxx/iosxx.github.io
-      #     publish_branch: gh-pages
-      #     publish_dir: ./public
-      #     allow_empty_commit: true
-      #     full_commit_message: ${{ github.event.head_commit.message }}
-      #     force_orphan: true
-      #     user_name: 'github-actions[bot]'
-      #     user_email: 'github-actions[bot]@users.noreply.github.com'
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.personal_token }}
+          external_repository: iosxx/iosxx.github.io
+          publish_branch: gh-pages
+          publish_dir: ./public
+          allow_empty_commit: true
+          full_commit_message: ${{ github.event.head_commit.message }}
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
 
       # - name: Publish to Cloudflare Pages
       #   uses: cloudflare/wrangler-action@v3
