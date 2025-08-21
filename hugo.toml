@@ -151,47 +151,6 @@ home = ["HTML", "RSS", "JSON"]  # 首页输出格式，JSON 用于搜索功能
     name = 'github'
     url = 'https://github.com/fubos'
 
-  [[params.socialIcons]]
-    name = 'twitter'
-    url = 'img/twitter.png'
-
-  [[params.socialIcons]]
-    name = 'bilibili'
-    url = 'https://space.bilibili.com/378117882'
-
-  [[params.socialIcons]]
-    name = 'WeChat'
-    url = 'img/wechat-code.jpg'
-
-  [[params.socialIcons]]
-    name = 'email'
-    url = 'mailto:2547388310@qq.com'
-
-  [[params.socialIcons]]
-    name = 'RSS'
-    url = 'index.xml'
-
-  [[params.socialIcons]]
-    name = 'facebook'
-    url = 'https://www.facebook.com/profile.php?id=100027782410997'
-
-  [[params.socialIcons]]
-    name = 'instagram'
-    url = 'img/instagram.png'
-
-  [[params.socialIcons]]
-    name = 'QQ'
-    url = 'img/qq.png'
-
-  [[params.socialIcons]]
-    name = 'Phone'
-    url = 'img/phone.png'
-
-  # 文章编辑链接（按需启用）
-  [params.editPost]
-    URL = 'https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content'
-    Text = 'Suggest Changes'  # 编辑按钮文字
-    appendFilePath = true     # 编辑链接后追加文件路径
 
   # 首页标签（按需启用）
   [params.label]
