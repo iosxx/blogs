@@ -202,23 +202,5 @@ home = ["HTML", "RSS", "JSON"]  # 首页输出格式，JSON 用于搜索功能
     # style = 'monokai'
     style = 'darcula'        # 代码高亮主题
 
-# 隐私配置（GDPR 合规）
-[privacy]
-  [privacy.vimeo]
-    disabled = false
-    simple = true
-
-  [privacy.twitter]
-    disabled = false
-    enableDNT = true  # 尊重 Do Not Track 协议
-    simple = true
-
-  [privacy.instagram]
-    disabled = false
-    simple = true
-
-  [privacy.youtube]
-    disabled = false
-    privacyEnhanced = true  # 启用 YouTube 增强隐私模式
 
 
