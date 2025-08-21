@@ -132,19 +132,19 @@ home = ["HTML", "RSS", "JSON"]  # 首页输出格式，JSON 用于搜索功能
 
     [[params.homeInfoParams.buttons]]
       name = '👨🏻‍💻 tech'
-      url = '/tech'
+      url = 'posts/tech'
 
     [[params.homeInfoParams.buttons]]
       name = '📕 read'
-      url = '/read'
+      url = 'posts/read'
 
     [[params.homeInfoParams.buttons]]
       name = '🏖 life'
-      url = '/life'
+      url = 'posts/life'
 
   # 不蒜子统计配置
   [params.busuanzi]
-    enable = flase                     # 启用不蒜子访问统计
+    enable = true                     # 启用不蒜子访问统计
 
   # 社交媒体图标
   [[params.socialIcons]]
