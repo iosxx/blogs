@@ -2,7 +2,7 @@ name: Build Hugo and Deploy
 
 on:
   push:
-    branches: [main]
+    branches: [main1]
   workflow_dispatch:
   repository_dispatch:
     types: [build-hugo]
