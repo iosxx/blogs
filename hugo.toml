@@ -1,7 +1,7 @@
 # 基础配置
 baseURL = 'https://iosxx.github.io/'  # 绑定的域名
 title = '果粉圈博客'  # 补充缺失的闭合引号
-paginate = 10                         # 首页每页显示的文章数
+pagerSize = 10                         # 首页每页显示的文章数
 theme = 'PaperMod'                    # 主题名称，需与themes文件夹下名称一致
 languageCode = 'zh-cn'                # 语言代码，如 en-us
 hasCJKLanguage = true                 # 自动检测是否包含中、日、韩文
@@ -125,7 +125,7 @@ home = ["HTML", "RSS", "JSON"]  # 首页输出格式，JSON 用于搜索功能
     Title = "你好呀 👋"
     Content = "欢迎来到我的博客，记录学习笔记与生活感悟～"
     subtitle = "👏🏼welcome to my blog👇联系方式"  # 首页副标题（按需启用）
-    imageUrl = 'img/logo.png'
+    imageUrl = 'images/logo.png'
     imageTitle = ''
     imageWidth = 180
     imageHeight = 180
