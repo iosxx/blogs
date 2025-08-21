@@ -49,25 +49,25 @@ defaultContentLanguageInSubdir = false
     [[languages.zh.menu.main]]
       identifier = 'posts'
       name = '👨🏻‍💻 文章'
-      url = '/posts'
+      url = '/posts/'
       weight = 3
 
     [[languages.zh.menu.main]]
       identifier = 'read'
       name = '📕 阅读'
-      url = '/read'
+      url = '/posts/read'
       weight = 4
 
     [[languages.zh.menu.main]]
       identifier = 'life'
       name = '🏖 生活'
-      url = '/life'
+      url = '/posts/life'
       weight = 5
 
     [[languages.zh.menu.main]]
       identifier = 'photos'
       name = '🖼️ 相册'
-      url = '/photos'
+      url = '/posts/photos'
       weight = 6
 
     [[languages.zh.menu.main]]
