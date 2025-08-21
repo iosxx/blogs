@@ -47,7 +47,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.personal_token }}
-          external_repository: iosxx/blogs
+          external_repository: iosxx/iosxx.github.io
           publish_branch: gh-pages
           publish_dir: ./public
           allow_empty_commit: true
