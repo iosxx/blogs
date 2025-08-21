@@ -5,14 +5,12 @@ title: "{{title}}"
 slug: "{{title}}"
 share: true
 canonicalURL:
+cover:
+  image:
 keywords:
-  - pagespeed
-  - 图片优化
-  - 网站优化
 description:
 series:
 lastmod:
-cover:
-  image:
 author: naive
+dir: notes
 ---
