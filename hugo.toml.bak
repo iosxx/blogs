@@ -142,6 +142,15 @@ home = ["HTML", "RSS", "JSON"]  # 首页输出格式，JSON 用于搜索功能
       name = '🏖 life'
       url = '/life'
 
+  # 不蒜子统计配置
+  [params.busuanzi]
+    enable = flase                     # 启用不蒜子访问统计
+
+  # 社交媒体图标
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/fubos'
+
 
   # 首页标签（按需启用）
   [params.label]
