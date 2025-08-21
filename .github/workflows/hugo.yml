@@ -1,0 +1,82 @@
+name: Build Hugo and Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  repository_dispatch:
+    types: [build-hugo]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_CACHEDIR: /tmp/.hugo_cache  # 仅保留Hugo核心缓存目录
+
+    steps:
+      # 1. 拉取仓库代码（含子模块和完整Git历史，满足Hugo构建需求）
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      # 2. 安装指定版本的Hugo（扩展版，支持核心构建功能）
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.110.0'
+          extended: true
+
+      # 3. 缓存Hugo核心资源（避免重复编译，提升效率）
+      - name: Cache Hugo Resources
+        uses: actions/cache@v4
+        with:
+          path: |
+            resources/_gen
+            ${{ env.HUGO_CACHEDIR }}
+          key: ${{ runner.os }}-hugo-${{ hashFiles('content/**', 'assets/**', 'layouts/**', 'config.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-hugo-
+
+      # 4. 核心步骤：构建Hugo静态网站（输出到public目录）
+      - name: Build Hugo
+        run: hugo --minify --enableGitInfo --gc
+
+      # 部署步骤：已启用GitHub Pages部署
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.personal_token }}
+          external_repository: iosxx/blogs
+          publish_branch: gh-pages
+          publish_dir: ./public
+          allow_empty_commit: true
+          full_commit_message: ${{ github.event.head_commit.message }}
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      # - name: Publish to Cloudflare Pages
+      #   uses: cloudflare/wrangler-action@v3
+      #   with:
+      #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      #     accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      #     command: pages deploy public --project-name=${{ secrets.CLOUDFLARE_PROJECT_NAME }} --commit-dirty=true
+
+      # - name: Deploy to Aliyun OSS
+      #   uses: docker://fangbinwei/aliyun-oss-website-action:v1
+      #   env:
+      #     ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+      #     ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
+      #     BUCKET: eallion-com
+      #     ENDPOINT: oss-cn-shanghai.aliyuncs.com
+      #     FOLDER: public
+      #     SKIP_SETTING: true
+      #     INCREMENTAL: true
+
+      # - name: Deploy to EdgeOne Pages
+      #   uses: TencentEdgeOne/edgeone-pages-action@v1
+      #   with:
+      #     token: ${{ secrets.EDGEONE_API_TOKEN }}
+      #     project-name: "eallionblog"
+      #     build-path: "./public"
