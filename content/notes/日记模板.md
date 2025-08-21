@@ -1,0 +1,16 @@
+---
+date: "{{date}}"
+tags:
+title: "{{title}}"
+slug: "{{title}}"
+share: true
+canonicalURL:
+cover:
+  image:
+keywords:
+description:
+series:
+lastmod:
+author: naive
+dir: notes
+---
