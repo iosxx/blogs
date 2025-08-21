@@ -12,7 +12,7 @@ buildDrafts = false                   # 是否构建草稿文章
 buildFuture = false                   # 是否构建未来发布的文章
 buildExpired = false                  # 是否构建已过期的文章
 pygmentsUseClasses = true
-googleAnalytics = 'UA-123-45'        # Google Analytics 代码（按需启用）
+# googleAnalytics = 'G-XXXXXXXXXX'       # Google Analytics 代码（按需启用）
 
 # 压缩配置
 [minify]
@@ -271,10 +271,4 @@ home = ["HTML", "RSS", "JSON"]  # 首页输出格式，JSON 用于搜索功能
     disabled = false
     privacyEnhanced = true  # 启用 YouTube 增强隐私模式
 
-# 第三方服务配置
-[services]
-  [services.instagram]
-    disableInlineCSS = true  # 禁用 Instagram 内嵌 CSS
 
-  [services.twitter]
-    disableInlineCSS = true  # 禁用 Twitter 内嵌 CSS
