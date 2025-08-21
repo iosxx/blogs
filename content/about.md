@@ -35,8 +35,4 @@ cover:
     relative: false
 ---
 
-Welcome to My Blog.
-
-> [My GitHub](https://github.com/Fubos)
-
-> [My Leanrning Project](https://chat.fun-x.top) 
+Welcome to My Blog
